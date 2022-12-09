@@ -225,7 +225,64 @@
     </table>
 
 
+    <br />
 
+    <!-- Formularios / Forms  -->
+
+    <form action="#" method="get"> <!-- Barra de navegacion interna -->
+        <label for="name_input">Nombre: </label> 
+        <input type="text" id="name_input" name="username" maxlength="10" placeholder="Escribe tu nombre..."> <!-- Entrada de datos -->
+        <br />
+
+        <label for="lastname_input">Apellido: </label> 
+        <input type="text" id="lastname_input" name="lastname" placeholder="Escribe tu Apellido...">
+        <br />
+
+        <label for="email_input">Email: </label>
+        <input type="email" id="email_input" name="email" placeholder="Escribe tu email...">
+        <br />
+
+        <label for="pssword_input">Contraseña: </label>
+        <input type="password" id="pssword_input" name="password" placeholder="Escribe tu Contraseña...">
+        <br />
+
+        <label for="textarea_input">Texto: </label> <br>
+        <textarea id="textarea_input" name="textarea_input " cols="50" rows="10" placeholder="Escribe tu opinion..."></textarea>
+        <br />
+
+        <label for="sex_input">Genero</label>
+        <select name="sex_input" id="sex_input">
+            <option value="" hidden></option>
+            <option value="female">Femenino</option>
+            <option value="male">Masculino</option>
+            <option value="other">Otro</option>
+        </select>
+        <br>
+
+        <input type="number" id="age_input" name="age_input" min="0" max="100">
+        <br>
+
+        <input type="date" name="date_input" id="date_input">
+
+        <input type="submit" value="Enviar">
+        
+    
+        
+        
+        
+        
+        
+        
+        <!-- El for del label y el id del input tienen que ir relacionados con el mismo nombre -->
+    </form>
+
+    <hr>
+    <br />
+
+
+
+
+ 
 
 
 
