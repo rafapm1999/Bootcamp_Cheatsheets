@@ -280,8 +280,91 @@
             <input type="date" name="date_input" id="date_input">
         </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar"> <!-- Envia el contenido del formulario -->
+        <input type="reset" value="Vaciar"> <!-- Resetea el contenido del formulario -->
+
+        <div> <!-- Input con "ayuda" que autocompleta opciones -->
+            <label for="carbrandinput">La marca de tu coche</label>
+            <input type="text" id="carbrandinput" name="carbrand" list="carbrandlist">
+            <datalist id="carbrandlist"> <!-- La id del datalist debe coincidir con en nombre que tenga list dentro del input -->
+                <option value="bmw">BMW</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="mustang">Mustang</option>
+                <option value="volkswagen">Volkswagen</option>
+            </datalist>
+        </div>
+        <br>
+
+        <fieldset> <!-- Fieldset junto a legend genera un aspecto mas atractivo para nuestro formulario -->
+            <legend>Información de tu pareja</legend>
+            <div class="inputblock">
+                <label for="name_input">Nombre: </label> 
+                <input type="text" id="name_input2" name="username" maxlength="10" placeholder="Escribe tu nombre..."> 
+                <br />
+            </div>
+    
+            <div class="inputblock">
+                <label for="lastname_input">Apellido: </label>
+                <input type="text" id="lastname_input2" name="lastname" placeholder="Escribe tu Apellido...">
+                <br />
+        </fieldset>
+
+         <fieldset> <!-- Es importante que los inputs tengan el mismo nombre para que solo deje elegir uno -->
+            <legend>Estado civil</legend>
+
+            <div> <!-- Inputs tipo radio, para solo poder elegir una opcion de todas las posibles (para que esto se cumpla el valor de "name" debe coincidir en todas las opciones) -->
+                <input type="radio" name="civilstate" id="marriedinput" checked> <!-- Checked deja marcada la opcion cuando entramos al formulario -->
+                <label for="">Casado</label>
+            </div>
+
+            <div>
+                <input type="radio" name="civilstate" id="singleinput">
+                <label for="">Soltero</label>
+            </div>
+        </fieldset>
+        <br />
+
+         <fieldset> 
+            <legend>Productos</legend>
+
+            <div> <!-- Selector de casillas -->
+                <input type="checkbox" name="iphoneproduct" id="iphoneproduct" required> <!-- Required hace que sea obligatorio completar ese apartado, sino el formulario no se puede enviar -->
+                <label for="">Iphone</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="samsungproduct" id="samsungproduct">
+                <label for="">Samsung</label>
+            </div>
+        </fieldset>
+        <br />
+
+        <div> <!-- selector de rango -->
+            <label for="rangeinput">Seleccione la cantidad de elementos</label>
+            <input type="range" name="rangeinput" id="rangeinput">
+            <br />
+        </div>
+
+        <div> <!-- Medidor de cantidad -->
+            <label for="fuellevel">Cantidad de gasolina</label>
+            <meter min="o" max="100" id="fuellevel" value="60"></meter>
+            <br />
+        </div>
+
+        <div> <!-- Barra de progreso -->
+            <label for="progressinput">Progreso</label>
+            <progress max="100" value="33"></progress>
+            <br />
+        </div>
         
+        <div> <!-- Subir archivo multimedia -->
+            <label for="fileinput">Subir un Archivo</label>
+            <input type="file" id="fileinput" name="fileinput" value="">
+            <br />
+        </div>
+
+
+
         <!-- El for del label y el id del input tienen que ir relacionados con el mismo nombre -->
     </form>
 
