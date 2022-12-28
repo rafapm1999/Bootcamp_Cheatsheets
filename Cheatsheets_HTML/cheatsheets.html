@@ -363,6 +363,8 @@
             <input type="file" id="fileinput" name="fileinput" value="">
             <br />
         </div>
+
+        <button>Click!</button>
         <!-- El for del label y el id del input tienen que ir relacionados con el mismo nombre -->
 
 
@@ -378,25 +380,54 @@
         <iframe src="https://codespaceacademy.com/" width="500px" height="400px" frameborder="0"></iframe>
         <br />
 
+        <!-- Insertar un pdf -->
+        <iframe src="https://www.juntadeandalucia.es/export/drupaljda/0001703A07DR.pdf"  width="500px" height="400px" frameborder="0"></iframe>
+        <br />
+
+        <!-- Para insertar igual que iframe pero object abarca más cosas y es más completo como plugins, recursos que no tiene por que ser visuales tipo de SEO ( no es muy frecuente )-->
+        <object data="https://www.juntadeandalucia.es/export/drupaljda/0001703A07DR.pdf" type="application/pdf"></object>
+
+        <!-- Citas / Quotations -->
+
+        <!-- Cita en bloque -->
+        <blockquote>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laboriosam reiciendis nihil eos, explicabo quo impedit praesentium perferendis fugit nobis accusantium nostrum excepturi voluptatem vero ea itaque odio quidem odit.
+
+        </blockquote>
+
+        <!-- Citas en línea -->
+        <q>
+            Soy Programador
+        </q>
+
+        <!-- Abreviaturas (Con pop-up explicativo) -->
+
+        <p> Hola he estudiado en un <abbr title="Formacion Profesional">FP</abbr></p>
+
+        <!-- Etiquetas html para JavaScript / Scripting -->
+
+        <!-- Etiqueta para insertar lineas de codigo JS dentro del documento HTML -->
+        <script> /* Se podria escribir codigo JS directamente dentro de <Script> */
+            
+            document.write("Escribiendo desde JS.")
+            
+        </script>
+
+        <!-- Etiqueta para enlazar a nuestro archivo HTML un archivo JS el cual tendrá todo el codigo JS -->
+        <script src="ejemplo_archivo_js.js">/* Pero lo normal es que enlacemos un archivo.js en esta etiqueta, en el cual estará todo el codigo JS */
+            
+        </script>
+
+        <!-- Etiqueta para procesar en caso de que el navegador no pueda procesar el codigo JS -->
+        <noscript>Error. Tu procesador no ha podido procesar el código JavaScript</noscript>
+
+
+
+         <!-- Estas etiquetas JS van las ultimas justo antes del cierre de </body> -->
+        
 
     </form>
-
     <hr>
     <br />
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
   </body>
 </html>
