@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Metadatos / metadata -->
+    <meta charset="UTF-8" /> <!-- Tipo de caracteres que se van a aceptar dentro del documento -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Para tener compatibilidad con microsoft Explorer o Edge -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--  Hace referencia a como se verá la pagina, la cual ocupará el ancho de nuestro dispositivo, con un zoom inicial de 1.0 -->
+    
+    <meta name="description" content=""> <!-- Descripcion que aparece a pie de enlace en el navegador, favorece el posicionamiento en los motores de búsqueda -->
+    
+    <meta name="author" content="Rafapm99"> <!-- Nombre del creador o empresa que ha realizado la pagina -->
+
+    <!-- Controlar la indexación de nuestra página por parte de los motores de búsqueda -->
+    <meta name="robots" content="index"> <!-- Para que tu página sea indexada por los motores de busqueda del navegador, valor por defecto -->
+    <meta name="robots" content="noindex"> <!-- Para que tu página no sea indexada por los motores de busqueda del navegador -->
+
+    <!-- Controlar seguimiento de nuestros enlaces de los motores de busqueda -->
+    <meta name="robots" content="follow"> <!-- Hace que el motor de busqueda se meta en todos nuestros <a href... para recolectar información, valor por defecto-->
+    <meta name="robots" content="nofollow"> <!-- Evita que el motor de busqueda pueda recolectar información de nuestros  <a href...  -->
+
+    <!-- Controlar caché del documento -->
+    <meta http-equiv="cache-control" content="no-cache"> <!-- Para que los motores de busqueda no cacheen la información de la página y también evitamos que nos indexen, ya que no guardan datos en su cache -->
+
+    <!-- Redirigir a otro documento -->
+    <!-- <meta http-equiv="refresh" content="10; url=https://google.com"> --> <!-- Para que la pagina te redirija a otro lugar en el tiempo que hemos establecido (en este caso 10 seg) -->
+
+    <script></script> <!-- Es recomendable que sus funciones no afecten al funcionamiento de DOM, porque sino, con <style> antes de body, nuestra pagina no cargaría hasta que el codigo JS no se ejecute-->
+    <style></style> <!-- Para implementar estilos CSS dentro de nuestro archivo HTML directamente -->
+    
     <title>HTML cheatsheet</title>
   </head>
   <body>
