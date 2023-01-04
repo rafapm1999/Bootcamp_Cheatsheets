@@ -1,0 +1,18 @@
+/* Tipos de display en CSS */
+
+[class^="box_"]{ /* Todas las clases que empiecen por box */
+    background-color: steelblue;
+    /* Esto es lo mismo que poner individualmente background-color: steelblue; en cada uno de los box */
+} 
+
+.box_0{
+    display: none;
+}
+
+.box_3, .box_4, .box_3 p, .box_4 p{
+    display: inline-block; /* Tiene elementos como padding, magin, border, etc */
+}
+
+.box_5, .box_6, .box_5 p, .box_6 p {
+    display: inline; /* Unicamente tiene el tamaño que acupen las letras */
+}

@@ -1,0 +1,35 @@
+
+*{
+    /* Background */
+
+    
+
+    /* Margenes */
+
+    /* margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px; */
+
+    margin: 10px;
+
+    /* Bordes */
+
+    /* border-bottom: 1px; 
+    border-top: 1px;
+    border-width: 5px;
+    border-style: solid; */
+
+    border: 5px solid seagreen;
+    border-bottom: 1px solid #000;
+
+    /* Padding */
+
+    /* padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px; */
+
+    padding: 10px; /* Todos los lados vale 10px */
+    padding: 10px 5px 20px 2px; 
+}
