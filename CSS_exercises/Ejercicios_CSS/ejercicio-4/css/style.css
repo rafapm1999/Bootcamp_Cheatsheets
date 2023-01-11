@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.headerContainer{
+    background-color: darkgray;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.titleContainer{
+    float: left;
+}
+
+.searchBox{
+    margin: 2px 4px 2px 0;
+    float: right;
+}
+
+.navContainer{
+    background-color: darkgrey;
+    border: 1px solid black;
+}
+
+.navContainer a {
+    padding: 2px 4px;
+}
+
+.bodyContent{
+    
+    overflow: hidden;
+}
+
+.asideContainer{
+    float: left;
+    width: 15%;
+    border: 1px solid black;
+    padding-right: 4px;
+    margin-left: 15px;
+}
+
+.asideContainer span{
+    display: block;
+}
+
+.relationateA{
+    display: block;
+}
+
+.fatherContainer{
+    float: right;
+    width: 80%;
+    overflow: hidden;
+    border: 1px solid black;
+    margin-right: 15px;
+}
+
+.articleImage{
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.child1container{
+    float: left;
+    width: 70%;
+    border: 1px solid black;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.child2container{
+    float: right;
+    width: 25%;
+    border: 1px solid black;
+}
+
+.fatherFooter{
+    background-color: darkgray;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.fatherFooter a:first-child{
+    padding-left: 4px;
+}
+
+.fatherFooter span{
+    float: right;
+    padding-right: 4px;
+}

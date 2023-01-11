@@ -10,9 +10,9 @@
 }
 
 .box_3, .box_4, .box_3 p, .box_4 p{
-    display: inline-block; /* Tiene elementos como padding, magin, border, etc */
+    display: inline-block; /* Tiene en cuenta elementos como padding, magin, border, etc */
 }
 
 .box_5, .box_6, .box_5 p, .box_6 p {
-    display: inline; /* Unicamente tiene el tamaño que acupen las letras */
+    display: inline; /* Unicamente tiene en cuenta el tamaño que acupen las letras */
 }

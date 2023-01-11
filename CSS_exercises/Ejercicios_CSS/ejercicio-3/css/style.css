@@ -1,0 +1,20 @@
+
+ul{
+    padding: 0;
+
+}
+
+ul>li{
+    color: #333;
+    background-color: #ddd;
+    list-style-position: inside; /* Esto hace que el punto entre dentro del backgroungcolor */
+    padding: 5px;
+    cursor: pointer;
+    list-style-image: url(../img/simbolo-de-doble-flecha-derecha-de-avance-rapido.png) ;
+    border: 1px solid black;
+}
+
+ul>li:hover{
+    color: blue;
+    background-color: dimgray;
+}
