@@ -1,0 +1,81 @@
+/* Flexbox (A nivel contendor) */
+*{
+
+}
+.flex-parent{
+    display: flex; /* Display flex debe estar en el contenedor padre, y hará que los hijos sean flex */
+    flex-direction: row; /* Valor por defecto */
+    width: 90%;
+    height: 250px;
+    border: 2px solid black;
+
+    /* flex-wrap: wrap; */ /* Hace que cuando los hijos no quepan en el viewport los pase a una nueva columna
+    Importante: Eso no implica que sea column, sino que wrap hace ese efecto */
+    
+    /* flex-wrap: nowrap; Hace que cuando los hijos no quepan en el viewport, estos se compriman para poder mantenerse en la linea. Es el valor por defecto */
+    
+    /* flex-flow: row wrap; */ /* Atajo que fusiona tanto flex-wrap: wrap; como flex-direction: row; */
+
+
+
+    /* Para el eje principal: MAIN */
+
+    justify-content: center; /* Este valor en el padre hace que se centren los hijos */
+    /* justify-content:flex-start; */ /* Hace que los elementos se coloquen a la izquierda */
+    /* justify-content: flex-end; */ /* Hace que los elementos se coloquena la derecha */
+    /* justify-content: space-around; */ /* Distribuye los espacios entre elementos por ambos lados dando aire (más por el centro) entre elementos */
+    /* justify-content: space-between; */ /* Genera aire entre los elementos pero solo entre ellos, no por los laterales */
+     justify-content: space-evenly;  /* Genera espacios de forma equitativa por ambos lados */
+
+    /* Para el eje secundario: CROSS AXIS */
+
+    align-items: center; 
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: stretch; */ /* Valor por defecto */
+    /* align-items: baseline; */
+}
+
+[class^="flex-child"]{/* Truco para llamar a todas las clases que empiecen por ese nombre */
+    /* Otra opcion seria llamar con primera clase a todos los child flex-child, y luego otra clase individual para cada uno; flex-child-$ */
+    width: 250px;
+
+    display: flex;/* Con estos tres valores centramos el contenido que tiene los hijos */
+    justify-content: center; 
+    align-items: center;
+}
+
+/* .flex-parent > div:nth-child(2) */ /* Con este pseudoselector elegimos el hijo que le indiquemos */
+
+.flex-parent > div:nth-child(odd){
+   /* .flex-parent > div:nth-child(odd) / Me cogería los hijos impares*/
+   /* .flex-parent > div:nth-child(even) / Me cogeŕia los hijos pares*/
+    background-color: #ddd;
+    color: #333;
+}
+.flex-parent > div:nth-child(even){
+    background-color:  #333;
+    color: #ddd;
+}
+/* .flex-child-1{  
+    height: 100px;
+} */
+
+
+/* Flexbox para un elemento en conreto */
+
+
+.flex-child-2{
+    /* flex-shrink: 3; */ /* Hace que ese elemento tenga un valor de decrecimiento (de 3 veces mas rápido) que hara que decrezca antes cuando no quepan (para que funcione el padre no puede ser wrap) */
+    /* flex-grow: 1; */ /* Hace que el elemento coja el espacio disponible que haya, cuanto mayor es el numero mas alto en la jerarquia está */
+    /* flex-basis: 250px; */ /* Hace que el elemento considere ese tamaño específico como tamaño base del elemento (SI ponemos auto coge el ancho del padre) */
+    /* flex: 3 1 250px; */ /* Con esta proppiedad simplificamos en una sola las tres propiedades anterior */
+
+
+}   
+.flex-child-3{
+    flex-shrink: 1; /* Con el valor 1 damos un valor de decrecimiento base/estandar/normal */
+    /* align-self: center; */ /* Sobreescribe a nivel elemento individual los valores heredados por el padre */
+}
+
+

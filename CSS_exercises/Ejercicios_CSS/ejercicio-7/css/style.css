@@ -1,0 +1,56 @@
+*{
+
+}
+body{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+
+}
+h3{
+    color: lightgrey;
+}
+
+.container{
+    background-color: white;
+    border-radius: 10%;
+    height: 80vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.firstContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+[class^="box"] {
+    background-color: lightgrey;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+    margin: 10px 0;
+}
+.secondContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+.circleContainer{
+    background-color: lightgray;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.lineContainer{
+    background-color: lightgrey;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+    margin: 10px 0;
+}
+
