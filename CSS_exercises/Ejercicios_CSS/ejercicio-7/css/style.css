@@ -1,6 +1,6 @@
-*{
+/* *{
 
-}
+} */
 body{
     background-color: blueviolet;
     display: flex;
@@ -10,16 +10,19 @@ body{
 }
 h3{
     color: lightgrey;
+    margin: 60px 0;
 }
 
 .container{
     background-color: white;
-    border-radius: 10%;
+    border-radius: 15px;
     height: 80vh;
-    width: 90vw;
+    width: 35vw;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+
 }
 .firstContainer{
     display: flex;
@@ -29,27 +32,28 @@ h3{
 [class^="box"] {
     background-color: lightgrey;
     border-radius: 10px;
-    width: 300px;
+    width: 25vw;
     height: 30px;
     margin: 10px 0;
 }
 .secondContainer{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    margin-top: 200px;
+    flex-grow: 1;
+    padding-bottom: 80px;
 }
 .circleContainer{
     background-color: lightgray;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
+    width: 5vw;
+    height: 10vh;
+    border-radius: 50%;
 }
 .lineContainer{
     background-color: lightgrey;
     border-radius: 10px;
-    width: 300px;
+    width: 10vw;
     height: 30px;
     margin: 10px 0;
 }

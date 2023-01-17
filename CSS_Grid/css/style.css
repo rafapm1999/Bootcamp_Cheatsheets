@@ -1,0 +1,47 @@
+
+/* Archivo CSS para Grid Básico */
+
+
+
+*{
+    /* margin: 0; */
+}
+[class^="grid-child"]{
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-parent{ /* Los grid-template-... solo se pueden usar en el contenedor padre */
+    display: grid;/* Activa el estado Grid en el contenedor padre */
+
+
+    /* grid-template-columns: 1fr 2fr 1fr; */ /* Hemos indicado que la columna 1 ocupa 1fr, la 2 2fr, y la 3 1fr */
+
+    grid-template-columns: repeat(3, minmax(160px, 1fr)); /* Decimos que cree 3 columnas que nunca bajen de 160px, si baja porque no cabe que cree una nueva línea, pero que si cabe entonces distribuya los espacios uniformente respetando las columnas dictadas  */
+    
+    /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */ /* Igual que el de arriba pero las columnas las gestiona automaticamente para cumplir la regla */
+
+    grid-template-rows: 1fr 2fr; /* Hemos indicado que la fila 1 es de 1fr, y la 2 de 2fr */
+    /* grid-template-rows: repeat(4, 1fr 2fr); */ /* Aqui le decimos que si hay más de dos columnas repita "X" veces, en este caso 4, el patrón 1fr 2fr */
+    /* grid-template-rows: 250px 500px; */ /* También se puede usar valores específicos como px */
+    
+    gap: 10px;/* Marcamos una distancia entre contenedores de 10px */
+
+
+
+
+
+
+}
+
+@media only screen and (max-width: 920px){ /* Creamos una mediaquery para que sea responsive */
+    .grid-parent{
+        grid-template-columns: 1fr 2fr; /* Dictamos que en vez de 3 columnas pasen a 2, las cuales de distribuyen en 1fr la 1, y 2fr la 2 */
+    }
+}
+@media only screen and (max-width: 768px){
+    .grid-parent{
+        grid-template-columns: 1fr; /* Dictamos que pase a tener 1 columna de 1fr */
+    }
+}

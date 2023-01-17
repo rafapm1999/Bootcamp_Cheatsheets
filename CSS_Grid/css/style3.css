@@ -1,0 +1,31 @@
+
+/* CSS Grid por Áreas */
+
+.grid-parent-3{
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: 150px 1fr 1fr; /* Colum 1 tiene un valor fijo de 150px, Colum 2 y 3 se distuibuyen equitativamente el espacio restante ya que ambas tienen 1fr */
+
+    grid-template-rows: 1fr 4fr 1fr;
+
+    grid-template-areas: "nav nav nav" /* Le decimos que el elemento llamado nav ocupe 3 columnas (nav nav nav) */
+                        "content1 content2 content3"
+                        ". footer footer"; /* El punto hace que se considere que en ese lugar no haya nada pero respete esa posicion */
+
+}
+.grid-parent-3 > .grid-child-1{
+    grid-area: nav;
+}
+.grid-parent-3 > .grid-child-2{
+    grid-area: content1;
+}
+.grid-parent-3 > .grid-child-3{
+    grid-area: content2;
+}
+.grid-parent-3 > .grid-child-4{
+    grid-area: content3;
+}
+.grid-parent-3 > .grid-child-5{
+    grid-area: footer;
+}
