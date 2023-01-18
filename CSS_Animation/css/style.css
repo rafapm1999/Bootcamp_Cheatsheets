@@ -1,0 +1,19 @@
+.textAnimation{
+    animation-name: slidein; /* Indicamos que el div.textAnimation va a ser afectado por la animación slidein */
+    animation-duration: 3s; /* Le especificamos cuanto tiempo va a durar esta */
+    animation-iteration-count: infinite; /* Y cuantas veces se va a repetir la animación (En este caso infinito) */
+}
+@keyframes slidein { /* Damos un nombre personalizado a la animación que vayamos a configurar */
+    from{ /* Marcamos aquí el desde donde o que momento */
+        margin-left: 100%;
+        color: blue;
+    }
+    50%{/* También podemos marcar momentos concretos especificando en que % de la transición queremos que actúe */
+        margin-left: 0%;
+        color: red;
+    }
+    to{ /* Y aqui marcamos el hasta donde o que momento */
+        margin-left: 100%;
+        color: green;
+    }
+}

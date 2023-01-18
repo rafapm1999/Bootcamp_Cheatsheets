@@ -1,0 +1,20 @@
+.transform{
+    height: 100px;
+    width: 100px;
+    background-color: #333;
+
+
+
+    transform: translate(300px, -20px) rotate(45deg) scale(1.5) skew(25deg);
+
+
+    /* El valor translate hace que en el eje X se mueva a la derecha 300px, y en el eje Y suba 20px (por tener un valor negativo) */
+    /* El valor rotate hace que el div se mueva 45 grados hacia la derecha (ya que es positivo) */
+    /* El valor scale hace que el div crezca x1.5 su tamaño. El valor predeterminado es 1. De uno hacia abjo decrece*/
+    /* El valor skew respeta la base del div, y gira la parte de arriba los grados que le hayamos indicado */
+
+
+
+
+
+}   

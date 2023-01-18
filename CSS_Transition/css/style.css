@@ -1,0 +1,30 @@
+.transition{
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+    background-color: darkcyan;
+    color: white;
+    cursor: pointer;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition-property: transform;/* Aqui estamos dictando que elementos van a tener transición y no van a cambiar instantaneamente */
+    transition-duration: 0.3s;/* Aqui marcamos el tiempo que va a durar la transición tanto al activarse como en volver a su estado natural */
+    transition-timing-function: ease-in-out; /* Sirve para dar tiempos de transición predeterminados ya */
+    /* transition-delay: .5s; */ /* TIempo que tarda la transicion en comenzar una vez está el raton encima del div y viceversa */
+
+
+
+    /*  transition: transform 0.3s ease-in-out .5s; */ /* Esto haría el mismo resultado que los 4 de arriba por separado */
+    /* Si en el valor de transition-property: ponemos all, estamos diciendo que afecte a todas las propiedades que van a generar un cambio en el elemento; margins, backgrounds-colors, etc */
+    /* Importante: Tienen que tener ese orden dentro de la funcion. transition: transition-property transition-duration transition-timing-funtion transition-delay; */
+}   
+
+.transition:hover{ /* Con :hover ponemos que va a pasar cuando el ratón se posicione encima del div */
+    transform: scale(1.3) rotate(3deg);
+    color: red;
+    background-color: blue;
+}

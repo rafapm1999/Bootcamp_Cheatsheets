@@ -1,0 +1,151 @@
+
+[class^="child-"]{
+    height: 100px;
+    width: 100px;
+    background-color: cadetblue;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow-x: hidden;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    
+
+   
+}
+[class^=child-]:hover{
+    transform: scale(1.2);
+}
+.container{
+    /* background-color: rgb(255, 140, 0); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+    box-sizing: border-box;
+
+}
+.parent > .child-1{
+    grid-column: 1;
+    grid-row: 1;
+    animation-name: slidein;
+    animation-delay: 0.5s;
+    
+}
+.parent > .child-2{
+    grid-column: 2;
+    grid-row: 1;
+    animation-name: slidein;
+    animation-delay: 1s;
+}
+.parent > .child-3{
+    grid-column: 3;
+    grid-row: 1;
+    animation-name: slidein;
+    animation-delay: 1.5s;
+}
+.parent > .child-4{
+    grid-column: 4;
+    grid-row: 1;
+    animation-name: slidein;
+    animation-delay: 2s;
+}
+.parent > .child-5{
+    grid-column: 1;
+    grid-row: 2;
+    animation-name: slidein;
+    animation-delay: 2.5s;
+}
+.parent > .child-6{
+    grid-column: 2;
+    grid-row: 2;
+    animation-name: slidein;
+    animation-delay: 3s;
+}
+.parent > .child-7{
+    grid-column: 3;
+    grid-row: 2;
+    animation-name: slidein;
+    animation-delay: 3.5s;
+}
+.parent > .child-8{
+    grid-column: 4;
+    grid-row: 2;
+    animation-name: slidein;
+    animation-delay: 4s;
+}
+.parent > .child-9{
+    grid-column: 1;
+    grid-row: 3;
+    animation-name: slidein;
+    animation-delay: 4.5s;
+}
+.parent > .child-10{
+    grid-column: 2;
+    grid-row: 3;
+    animation-name: slidein;
+    animation-delay: 5s;
+}
+.parent > .child-11{
+    grid-column: 3;
+    grid-row: 3;
+    animation-name: slidein;
+    animation-delay: 5.5s;
+}
+.parent > .child-12{
+    grid-column: 4;
+    grid-row: 3;
+    animation-name: slidein;
+    animation-delay: 6s;
+}
+.parent > .child-13{
+    grid-column: 1;
+    grid-row: 4;
+    animation-name: slidein;
+    animation-delay: 6.5s;
+}
+.parent > .child-14{
+    grid-column: 2;
+    grid-row: 4;
+    animation-name: slidein;
+    animation-delay: 7s;
+}
+.parent > .child-15{
+    grid-column: 3;
+    grid-row: 4;
+    animation-name: slidein;
+    animation-delay: 7.5s;
+}
+.parent > .child-16{
+    grid-column: 4;
+    grid-row: 4;
+    animation-name: slidein;
+    animation-delay: 8s;
+}
+
+.slidein{
+    animation-name: slidein;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes slidein{
+    from{
+      /*  transform: translate(-100px); */
+      opacity: 0;
+      
+
+    }
+    to{
+        opacity: 1;
+    
+    }
+    
+}
+
+
