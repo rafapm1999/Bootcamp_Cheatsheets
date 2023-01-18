@@ -1,0 +1,27 @@
+[class^="gradient-"]{
+    height: 700px;
+    background-color: aqua;
+    margin-bottom: 40px;
+}
+.gradient-1{
+    background: linear-gradient(to right, darkblue, white);
+    /* Decimos que tenga un degradado lineal hacia la derecha empezando por azul y terminando en blanco */
+}
+.gradient-2{
+    background: linear-gradient(to bottom, white, darkblue 20%, white);
+    /* Con ese 20% hemos dicho que el color darkblue puro esté ubicado en el 20% del div */
+}
+.gradient-3{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../img/business-woman-working-on-laptop.jpg);
+    /* Aqui decimos que tengamos un gradiente hacia abajo de blanco con opacity 0 (transparente) a blanco con opacity 1 (blanco). Y luego fuera del parentesis de linear gradient una imagen, que estaŕa de fondo  */
+    background-size: cover;
+}
+.gradient-4{
+    background: radial-gradient(white, coral, red, violet, black);
+    /* Este gradiente hace que el color inicial (blanco) irradie desde el centro hacia fuera y termine con el ultimo color */
+
+    width: 50%;
+    box-shadow: 5px 5px 15px black;
+    /* Eje horizontal (x), eje vertical (y), desenfoque (más alto mayor desenfoque), color */
+    /* En el eje X, numeros positivos es hacia la derecha, y negativos hacia la izquierda. En el eje Y, negativos es hacia arriba, y positivo es hacia abajo */
+}
