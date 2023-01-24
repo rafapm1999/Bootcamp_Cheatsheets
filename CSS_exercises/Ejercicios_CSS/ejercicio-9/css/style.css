@@ -128,10 +128,10 @@
 }
 
 .slidein{
-    animation-name: slidein;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation-name: slidein; /* NOmbre propio de la animacion */
+    animation-duration: 3s; /* Tiempo que dura la animación */
+    animation-iteration-count: 1; /* Numero de veces que se va a ejecutar la animación */
+    animation-fill-mode: forwards; /* Con esto dictamos que la animación se quede con el estado final una vez realizada la animación, y no con el inicial */
 }
 
 
