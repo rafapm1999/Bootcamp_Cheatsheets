@@ -1,16 +1,14 @@
+[class^="carousel-item"]{
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+}
 .carousel-item:nth-child(1){
     background-image: url("../img/dhiva-krishna-X16zXcbxU4U-unsplash.jpg") ;
-    height: 400px;
-    background-size: cover;
 }
 .carousel-item:nth-child(2){
-    background-image: url("../img/grahame-jenkins-p7tai9P7H-s-unsplash.jpg") ;
-    height: 400px;
-    background-size: cover;
+    background-image: url("../img/grahame-jenkins-p7tai9P7H-s-unsplash.jpg") ; 
 }
 .carousel-item:nth-child(3){
     background-image: url("../img/joey-banks-YApiWyp0lqo-unsplash.jpg") ; 
-    height: 400px; 
-    background-size: cover;
-    
 }
