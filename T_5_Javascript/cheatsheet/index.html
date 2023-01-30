@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet Javascript</title>
+</head>
+<body>
+    <h1>Procesar Javascript</h1>
+    <a href="#" onclick="alert('Hola desde un script inline')">Inline script</a> <!-- A no ser que usemos React es totalmente desaconsejado -->
+    <a href="#">Internal script</a>
+    <a href="#">External script</a>
+
+
+
+    <!-- Escribir JS de forma directa en un archivo HTML (Internal Script)-->
+    <script>
+        /* Definir variables */
+
+        /* let x = 1 */; /* Crear una variable x con valor 1 */
+
+        let y;
+        y = 2 ; /* Otra forma de definir variables */
+
+        /* Definir constantes */
+        const a = 1; /* El valor de a siempre será 1, y si intento modificarlo posteriormente dará error */
+
+        /* Escribir en consola */
+        console.log("Hola Futuro.", x); /* Imprimir en consola Hola Futuro. */
+        
+/* ---------------------------------------------------------------------- */
+
+    function saludo () {
+        alert ("Hola desde un script interno") /* Creamos la función saludo, con la cual generamos un alert con un texto */
+        console.log("Has hecho click en el enlace 1")
+    }
+    document.getElementsByTagName("a").item(1).addEventListener("click", saludo); /* .onclick(saludo) seria lo mismo que .addEventListener("click", saludo) */
+    /* Selecciono un enlace usando .getElementsByTagName("a") */
+    /* Que seleccione el elemento 1 .item(1), ya que el primero es 0, esta haciendo referencia al segundo enlace */
+    /* Activa un evento de escucha con .addEventListener("click", saludo) que hace que esté atento para que cuando se haga un click, active la función saludo */
+   
+   
+   </script>
+
+   <!-- Importar Archivo JS externo al archivo HTML -->
+   <script src="js/main.js"></script>
+</body>
+</html>
