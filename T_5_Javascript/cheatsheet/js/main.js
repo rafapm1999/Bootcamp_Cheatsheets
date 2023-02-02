@@ -230,6 +230,107 @@ console.log(number, typeof number);
 
 
 
+/* --------------------Objetos / Objects------------------------------- */
+
+//Todo lo que esté en JS entre "{ }" es un objeto
+let person = {
+    //key:value
+    name: "John",
+    age: 30,
+    blonde: false, /* El ultimo valor hay que dejarlo sin coma */
+    
+}
+
+//Acceso por puntos / Dot notation
+
+console.log(person);
+console.log(`Se llama ${person.name} y tiene ${person.age} años`);
+
+person.name = "Jane";
+
+console.log(person);
+console.log(`Se llama ${person.name} y tiene ${person.age} años`);
+
+console.log(typeof person);
+
+//Acceso por corchetes / Brackets notation
+
+let nombreDeLaVariableQueQuiero = "age";
+console.log(person[nombreDeLaVariableQueQuiero]);
+
+//Ampliación
+
+person = {
+    
+    name: "John",
+    age: 30,
+    blonde: false,
+    /* childern: ["Peter, Lucas"] */ /* Se podría ampliar la información que contiene el objeto de esta forma, pero no es la más recomendable ya que se repetería lineas de codigo y es menos efectivo */
+    jump() {
+        console.log("Hey, estoy saltando");
+    }, /* Así se puede hacer desde ES6 */
+    walk: function() {
+        console.log("Hey, estoy andando");
+    }  /*  Así se hacía antes de ES6 */ // Esta opción puede usarse en React
+}
+
+
+person.children = ["Peter", "Lucas"]; /* Esta es la mejor forma de añadir nuevo contenido dentro del objeto; que objeto (person), nueva key (array, children), y el valor de este (["Peter", "Lucas"]) */
+
+console.log(person);
+console.log(person.children[1]); /* Para que escriba el valor del array 2, que está dentro del array children, que está dentro del objeto person */
+
+/* Para llamar a la función jump(){} y a la función walk: function(){}*/
+
+person.walk();
+person.jump();
+
+console.log(typeof {}, typeof [], typeof "", typeof person.children[10]);
+
+//This------------------
+
+const person2 = {
+    name: " Thomas ",
+    talk() {
+        console.log(`me llamo ${this.name}`); /* this hace referencia al elemento raiz donde se encuentra la orden this */
+        /* This hace referencia a person2, seria lomismo que poner ${person2.name} */
+    }
+}
+
+person2.talk();
+
+console.log(this);
+
+
+
+/* --------------------Arrays------------------------------- */
+
+//Creamos el array
+let selectedColors =["red", "blue"]; /* Array de Strings */
+console.log(selectedColors, selectedColors.lenght, typeof selectedColors);
+
+//Creamos un elemento nuevo en el array indicando su posición
+selectedColors[2] = "green";
+console.log(selectedColors, selectedColors.length);
+
+
+
+//Creamos un elemento nuevo en el array sin indicar posicion ninguna
+selectedColors.push("violet", "white"); /* Con esto decimos que añada otro elemento al array, sin que haga falta indicarle la posición de este, ya automaticamente lo hace añadiendolos al final de la lista del array*/
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.unshift("black"); /* Con unshift lo que hacemos es añadir los elementos indicados entre parentesis al principio del array */
+console.log(selectedColors, selectedColors.length);
+
+
+
+//Eliminamos un elemento del array
+selectedColors.pop(); /* el metodo pop() hace que se elimine el ultimo elemento del array */
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.shift(); /* Elimina el primer elemento del array */
+console.log(selectedColors, selectedColors.length);
+
 
 
 
