@@ -3,7 +3,7 @@ function saludo () {
     alert ("Hola desde un script externo") /* Creamos la función saludo, con la cual generamos un alert con un texto */
     console.log("Has hecho click en el enlace 2")
 }
-document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
+//document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
 
 
 
@@ -11,7 +11,7 @@ document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
 
 
 /* ----------------------Depuracion / logging-------------------------- */
-alert("mensaje")
+//alert("mensaje")
 console.log("mensaje");
 
 
@@ -330,6 +330,68 @@ console.log(selectedColors, selectedColors.length);
 
 selectedColors.shift(); /* Elimina el primer elemento del array */
 console.log(selectedColors, selectedColors.length);
+
+console.log(selectedColors.indexOf("red")); /* Le estamos diciendo que imprima en pantalla en que posicion está red dentro del array selectedColors*/
+
+console.log(selectedColors[selectedColors.indexOf("red") + 1]); /* Lo mismo que arriba pero diciendole que el que queremos es la posición siguiente a la de red y que nos imprima el valor */
+
+console.log(selectedColors.slice(1, 3)); /* Slice me devuelve aquellos valores que esten compredidos entre el rango que le he indicado entre parentesis, coge del 1 al 2 realmente */
+
+console.log(selectedColors.splice(1, 3)); /* Borra los elementos desde el valor de inicio (1, X), y la cantidad de numeros en adelante que vamos a borrar (X, 3), y "devuelve" los valores borrados. si no pusiesemos el 3 borraria desde el valor con posicion 1 hasta el final del array  */
+/* SI quisiesemos borrar unumero especifico habria que decirle que posicion tiene (1, X), y hasta donde, (1, 1). Así solo borramos un elemento en concreto  */
+console.log("El array tras hacer splice se queda asi : ", selectedColors);
+
+console.clear();
+
+//-----------------------------------------------------------------------------------------------------------------------
+//Ejercicio: Crear objeto niño con propiedades nombre, altura, género y amigoS. Amigos estará onicialmente vacío y añadiremos posteriormente 3 elementos con los nombre. Después, añadiremos uno extra al inicio.
+
+const niño = { /* Esto es programar con el metodo de Programación orientada a objetos */
+    nombre : "Rafa" ,
+    altura : 1.60,
+    genero : "Masculino",
+    amigoS: [],
+    perderAmigo () {
+        this.amigoS.pop();
+    }
+}
+
+console.log(niño); //Hasta aqui todo perfecto
+
+niño.amigoS = ["Pablo", "Miguel", "Javi"];
+
+console.log(niño); //Hasta aqui todo perfecto
+
+niño.amigoS.unshift("Pepe"); /* Si pusiesemos a Pepe entre [] en vez de crear un elemento mas dentro del array, crearía un array Pepe vacío */
+console.log(niño); //Hasta aqui todo perfecto
+
+/* Ponemos en el terminal  node cheatsheet/js/main.js para ejecutar el main.js directamente en el terminal o descargamos la extensión Code runner y damos al boton play de la derecha para ejecutarlo*/
+
+//Borramos el ultimo amigo
+console.log(niño);
+niño.perderAmigo(); //Llamamos a la función perder amigo
+console.log(niño);
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+/* ----------------------------------------------Condicionales------------------------------------------- */
+const randomNumber = 9;
+const guessedNumber = "5";
+
+if (typeof randomNumber !== typeof guessedNumber) {
+    console.log("Hey tienes que introducir el mismo tipo");
+}
+
+
+if (randomNumber === guessedNumber) {
+    console.log("Has acertado");
+} else if (randomNumber > guessedNumber) {
+    console.log("El numero secreto es mayor");
+} else if (randomNumber < guessedNumber) {
+    console.log("El numero secreto es menor");
+} else{
+
+}
 
 
 
