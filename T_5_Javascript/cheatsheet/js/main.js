@@ -375,6 +375,7 @@ console.log(niño);
 //-----------------------------------------------------------------------------------------------------------------------
 
 /* ----------------------------------------------Condicionales------------------------------------------- */
+// If / Else 
 const randomNumber = 9;
 const guessedNumber = "5";
 
@@ -392,6 +393,143 @@ if (randomNumber === guessedNumber) {
 } else{
 
 }
+
+
+//Ternary Operator / Operador ternario-----------
+
+/*   condición    cuando es acierto  cuando es fallo */
+// "Valor" >= 6 ?   ' Pasaste '   :     ' Fallaste '
+
+let variable2 = 12 < 10 ? "el primero es menor" : "el primero es mayor";
+console.log(variable2);
+
+//Ejemplo condicional if else + operador ternario
+
+person = {
+    
+    name: "John",
+    age: 30,
+    blonde: false,
+    /* childern: ["Peter, Lucas"] */ /* Se podría ampliar la información que contiene el objeto de esta forma, pero no es la más recomendable ya que se repetería lineas de codigo y es menos efectivo */
+    jump() {
+        console.log("Hey, estoy saltando");
+    }, /* Así se puede hacer desde ES6 */
+    walk: function() {
+        console.log("Hey, estoy andando");
+    },  /*  Así se hacía antes de ES6 */ // Esta opción puede usarse en React
+    presentarse(){
+        console.log(`Me llamo ${person.name}, tengo ${this.age} años y ${this.blonde ? "soy rubio" : "soy moreno"}`);
+    }
+}
+person.presentarse();
+
+// Switch 
+let option = 3;
+switch (option) {
+    case 1:
+        //Bloque de código para valor 1
+        console.log("Option vale 1");
+        break;
+    case 2:
+        //Bloque de código para valor 2
+        console.log("Option vale 2");
+        break;
+    case 3:
+        //Bloque de código para valor 3
+        console.log("Option vale 3");
+        break;
+    default: //"De otro modo" de PSEINT
+        console.log("Otra opción");
+        break;
+
+}
+
+//--------------------------------------Funciones / Functions --------------------
+
+//Nombradas------------------
+function greet(name, lastName) {
+    console.log(`Hola, ${name} ${lastName}. ¿Que tal?`);
+}
+
+greet(); /* La primera me daría hola undefind undefind. ¿que tal? ya que no hemos introducido valores entre los parentesis */
+greet("Marcos", "Aurelio");/* Aqui si daria bien el resultado en la función */
+
+//Ejemplo: Que la función devuelva el cuadrado de un número que recibe por parámetro
+
+function square(number) {
+    return number * number; //Este return hace que la función pare en ese punto (como hace break en los if else), lo que haya debajo de ese return de codigo, sería inalcanzable para la función
+}
+console.log(square(5)); //EL resultado daria 5 * 5 en este caso (25 como valor de retorno)
+
+//Anonimas--------------------
+let numbersArray = [5, 6, 1, 51, 15, 2, 37];
+console.log(numbersArray);
+numbersArray.sort(); // Este sort sin más especificación entre parentesis no sirve para ordenar numeros, ya que ordena teniendo de referencia la tabla ASCII    
+console.log(numbersArray);
+
+
+//----------------
+
+function orderNumbers (a, b) { /* Función con los datos especificados con if - else que necesita sort para ordenar numeros */
+    if (a<b) {
+        return -1;
+    } else if (a === b) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+/* function orderNumbers (a, b) { // Función que necesita sort para ordenar numeros simplificada al maximo
+   return a - b;
+} */
+
+/* numbersArray.sort(orderNumbers); // Al introducirle la función con los datos correctos ahora si ordena bien los numeros
+console.log(numbersArray); */
+
+numbersArray.sort(function (a, b) {return a - b}); /* Función Anonima ya que se llama sin nombre y en cuanto se realice el sort ésta muere  */
+
+console.log(typeof orderNumbers, typeof function (a, b) {return a - b});
+// Ambos son funciones una (orderNumbers) vamos a poder reutilizarla en muchos sort
+//Pero la segunda es una  función anonima la cual aparece y muere en ese sort completo con la función especificada entre parentesis
+//SI se necesita reutilizar la función es mejor guardarla en una variable, si no va a usarse mas lo mejor es usar una función anónima
+
+//Funciones de flecha / Arrow Functions (tambien considerada anonima)---------------
+
+
+
+
+/* const perimeterOfSquare = function (side) {
+    return side * 4;
+} */
+
+const perimeterOfSquare = (side) => side*4;
+//          argumentos que recibe   return que hace la función
+console.log(perimeterOfSquare(5));
+
+/* 
+    Los arrow function se usan en caso de funciones muy simples:
+ 
+    const perimeterOfSquare = function (side) {
+        return side * 4;
+    }
+
+    -Pasamos esa función a arrow function:
+
+    const perimeterOfSquare = (side) => return side*4;
+
+    //No es necesario que al final, despues del =>, se le ponga return, ya que es una unica operación simple la que realiza
+    //Y en este caso al solo introducir un valor entre parentesis, los parentesis son opcionales.
+    
+    - Con lo cual quedaría tal que así:
+    
+    const perimeterOfSquare = side => side*4;
+*/
+
+
+console.log(typeof function () {}, typeof (() => {}));
+//                      function            function
+
 
 
 
