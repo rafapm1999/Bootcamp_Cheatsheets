@@ -516,14 +516,20 @@ console.log(perimeterOfSquare(5));
 
     -Pasamos esa función a arrow function:
 
-    const perimeterOfSquare = (side) => return side*4;
+    const perimeterOfSquare = (side) => {return side*4};
 
-    //No es necesario que al final, despues del =>, se le ponga return, ya que es una unica operación simple la que realiza
+    //Quitamos la palabra function y ponemos la =>. No es necesario que al final, despues del =>, se le ponga return o las {}, ya que es una unica operación simple la que realiza
+
+    -Luego puede pasar a:
+
+    const perimeterOfSquare = (side) => side*4;
+
     //Y en este caso al solo introducir un valor entre parentesis, los parentesis son opcionales.
-    
-    - Con lo cual quedaría tal que así:
+
+    - Y finalmente quedaría tal que asi quedaría tal que así:
     
     const perimeterOfSquare = side => side*4;
+
 */
 
 
@@ -531,9 +537,116 @@ console.log(typeof function () {}, typeof (() => {}));
 //                      function            function
 
 
+//-------------------------------------- Bucles / Loops --------------------
+
+//For-------------------------
+
+/* for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+} */
+for (let i = 0; i <= 10; i++) {
+    console.log(`Indice: ${i}`);
+    
+}
+//Definir y  rellenar un array con el índice i
+const arrayPrueba = [];
+for (let i = 0; i <= 5; i++) { //Array que ordena valores de forma ascendente
+    arrayPrueba.push(i)
+}
+
+console.log(`Los valores del array son: ${arrayPrueba}`);
+console.log(arrayPrueba);
+
+/* const arrayPrueba = [];
+for (let i = 0; i <= 5; i++) { //Array que ordena valores de forma descendente opcion 1
+    arrayPrueba.unshift(i)
+} */
+
+/* const arrayPrueba = [];
+for (let i = 10; i <= 0; i--) { //Array que ordena valores de forma descendente opcion 2
+    arrayPrueba.push(i)
+} */
+
+//While--------------------------
+
+let contador1 = 0;
+
+while (contador1 <= 10) { /* Forma básica de realizar un while contador */
+    console.log(contador1);
+    contador1++; // Contador + 1 ( el ++ refleja el + 1)
+}
+
+/* 
+while (true) { // Con el valor true en la condición se generaría un bucle infinito
+    // parametros 
+}
+ */
+
+//For Each--------------------------
+
+//El metodo for each pertenece al metodo de los arrays
+
+console.log(numbersArray);
+
+numbersArray.forEach( function (item, index) { 
+    console.log(`EL valor del  array es ${item}, y su indice es ${index}`); 
+});
+
+//El for each necesita que le introduzcamos una función entre sus parentesis
+//Dentro de la función entre sus parentesis tenemos que introducir 1º el valor (item), y 2º el index
+//ya que va a tomar esos valores en su bucle, el valor del array y su indice automaticamente 
+//de ahi el motivo de poner (item, index) para que sea más intuitivo 
+
+numbersArray.forEach((item, index) => console.log(`EL valor del  array es ${item}, y su indice es ${index}`));
 
 
+let otherArray = []; //Creamos el array vacío
+console.log(otherArray); //Nos sale el array vacío
+numbersArray.forEach(item => otherArray.push(item)); //Hacemos que los valores de numbersArray pasen a ser copiados en los valores del array vacío otherArray
+console.log(otherArray); //Nos sale que otherArray tiene los valores de numbersArray
+
+//For - Of---------------------------------
+
+for (let item of numbersArray) { //este for nos saca el valor de un elemento iterable, en este caso en array numbersArray
+    console.log(item);
+}
+//Un valor iterable es todo aquello que se puede "dividir", con lo cual si esta formula lo hiciesemos con un string
+//Nos devolvería:
+/*              s
+                t
+                r
+                i
+                n
+                g */
+//En este caso nos devuelve los valores del array introducido
+
+//Continue---------
+for (let i = 0; i < 5; i++) {
+    if (i === 3 || i === 2){ //Con este continue estamos diciendole que se salte ese paso, y lo ignore 
+        continue
+    }
+    console.log(i);
+}
+//si i es estrictamente igual a 3, o, i es estrictamente igual a 2 entonces continue (es decir saltate ese paso y no hagas console.log()
 
 
+//Break--------------------------
+let i = 0;
+let k;
+mainLoop: while (true) { // Poniendo mainLoop: al while hacemos que podamos referirnos a este while concreto con el break
 
-
+    console.log("Outer Loop", i); 
+    i++,
+    k = 1;
+    //En el primero while  hacemos log de i, i = i + 1 (i++), y k tiene valor de 1 y entramos en el segundo while
+    while (true) {
+        console.log("Inner Loop", k); //Hacemos log de k
+        k++; // k = k +1 (k++)
+        if (i=== 5 && k === 5){ //Si i es estrictamente igual a 5, y, k es estrictamente igual a 5, hacemos break de mainLoop con lo cual el bucle se termina
+            break mainLoop;
+        } else if (k === 5) { // Si k es estrictamente igual a 5, para el de ejecutarse el while interno y vuelve al while mainLoop y se repite todo 
+            break;
+        }
+    }
+}
