@@ -24,7 +24,7 @@ console.log(family);
 //Creamos una cosntante que sea family y metemos en ella 
 //la peticion document.getElementsByTagName("div") 
 
-const grandParent = document.getElementById("grandparent");//IMPORTANTE, esta peticion necesito entre parentesis un string
+const grandParent = document.getElementsByClassName("grandparent");//IMPORTANTE, esta peticion necesito entre parentesis un string
 console.log(grandParent);
 
 const parents = document.getElementsByClassName("parent"); //Guardamos en la costante parents toda la info HTMLCOLLECTION de la clase parent
@@ -50,13 +50,27 @@ console.log(element2);
 
 parent1.style.backgroundColor = "#ddd"; //Cambiamos el css desde JS del fondo de parent1
 
+children[0].parentNode.style.backgroundColor = "#333"; //Aqui estamos diciendo el padre (parentNode) de children[0]
+
+const changeBackground= (element, color) => element.style.backgroundColor = color; //Crear funcion changeBackground con arrow function
+
+function changeBackgroundv2 (element, color) { //Crear funcion changeBackground con funcion normal
+    element.style.backgroundColor = color;
+}
+
+changeBackground(children[0], "#333");//el array children[0] le ponemos color #333
+changeBackground(parent1, "red");
+changeBackground(parent2.children[1], "blue") //ponemos blue el hijo[1] de parent 2
+changeBackground(children[1].parentNode.parentNode,"#ddd"); //Le cambiamos el el bgc al padre del padre de children[1], es decir a grandparent
 
 
+changeBackground(parent1.children[1].previousElementSibling, "red") //Aqui cambiamos color al "Hermano anterior" de children[1] (es decir children[0]), a color rojo
 
+//Este tipo de accesos tan rebuscados no se usan nunca, es de modo explicativo
+changeBackground(grandParent.children[1].nextElementSibling.lastElementChild, "green")
 
-
-
-
+//Properties--------------------------------
+grandParent.innerHTML = "<h1>HolaFuturo</h1>";
 
 
 
