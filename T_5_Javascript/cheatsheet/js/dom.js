@@ -83,7 +83,43 @@ parent1.classList.remove("bg-dark"); //Elimina la clase que pongamos entre paren
 console.log("Classlist: ", parent1.classList);
 parent1.classList.add("bg-red");//Añade una clase (la que digamos entre parentesis) al nodo seleccionado
 console.log("Classlist: ", parent1.classList);
-parent1.classList.toggle("");
+// parent1.classList.toggle("bg-red"); //Toggle alterna la clase, si no está, la incluye, si está la elimina
+// parent1.addEventListener("click", (e) => e.target.classList.toggle("bg-red"));
+parent1.id = "parentOne"; //Para añador id desde JS a HTML
+parent1.setAttribute("name", "nombre-del-parent-1"); //Con .setAttribute, primero marcamos el atributo (name, class,etc) y luego por el nombre que pongamos
+
+//Create / Remove Element-----
+
+let myDiv = document.createElement("div"); //Entre los parentesis se introduce que etiqueta va a tener (div, footer, aside, header, tabla, etc)
+//con document.createElement("div") creamos el nodo para "myDiv"
+//Aún myDiv no existe en el dom
+
+myDiv.id = "new-Div"; //Le creamos un id a myDiv
+//Aún myDiv no existe en el dom
+
+myDiv.classList.add("child"); //Le anexamos la clase child a myDiv
+//Aún myDiv no existe en el dom
+
+myDiv.textContent = "child 2.5";//Le añadimos texto a myDiv
+//Aún myDiv no existe en el dom
+
+parent1.appendChild(myDiv); //Decimos que myDiv, sea hijo de parent1, aquí ya introducimos a myDiv en el dom
+//Un nodo es unico, con lo cual si pusiesemos:
+//parent2.appendChild(myDiv); lo que hará es sobreescribir el existente y pasarlo al otro lado
+
+let myDiv2 = myDiv;//creamos una variable donde guardamos el valor de myDiv
+parent2.appendChild(myDiv2); //Se podría decir que esta es la forma de que en nodo myDiv se duplique, ya que al ser unico no se podría hacer sin este sistema
+
+myDiv2 = myDiv.cloneNode(); //Creamos un nodo a partir del original, entre parentesis si ponemos true, hace un copia entera del nodo, con sus hijos, texto, etc, si ponemos false, solo hace una copia del elemento e ignora todo lo que tenga en su interior
+//No poner nada en los parentesis es igual que poner false
+
+myDiv2 = myDiv.cloneNode(true);
+parent2.appendChild(myDiv2);
+myDiv2.textContent = "Child 5"
+//myDiv.remove(); //Elimina totalmente el elemento
+
+let myDiv3 = myDiv.cloneNode();
+parent2.before(myDiv3); //
 
 
 
