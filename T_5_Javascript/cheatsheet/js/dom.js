@@ -67,10 +67,35 @@ changeBackground(children[1].parentNode.parentNode,"#ddd"); //Le cambiamos el el
 changeBackground(parent1.children[1].previousElementSibling, "red") //Aqui cambiamos color al "Hermano anterior" de children[1] (es decir children[0]), a color rojo
 
 //Este tipo de accesos tan rebuscados no se usan nunca, es de modo explicativo
-changeBackground(grandParent.children[1].nextElementSibling.lastElementChild, "green")
+changeBackground(grandParent[0].children[1].previousElementSibling.lastElementChild, "green")
 
 //Properties--------------------------------
-grandParent.innerHTML = "<h1>HolaFuturo</h1>";
+/* grandParent[0].innerHTML = "<h1>HolaFuturo</h1>"; *///Modifica el HTML existente con esta etiqueta .innerHTML
+
+/* children[0].innerHTML = "Child 1 V2"; */
+
+console.log(children[0].innerHTML, children[0].textContent);
+//.innerHTML tiene en cuenta todo el HTML al que hacemos referencia, etiquetas, texto, etc
+//.textContent ignora las etiquetas y solo hace caso al texto 
+
+console.log("classlist", parent1.classList);
+parent1.classList.remove("bg-dark"); //Elimina la clase que pongamos entre parentesis
+console.log("Classlist: ", parent1.classList);
+parent1.classList.add("bg-red");//Añade una clase (la que digamos entre parentesis) al nodo seleccionado
+console.log("Classlist: ", parent1.classList);
+parent1.classList.toggle("");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
