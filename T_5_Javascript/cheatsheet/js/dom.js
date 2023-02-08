@@ -132,24 +132,59 @@ function createNode (label, id) {
     return newNode;
 }
 
-let newDiv1 = createNode("div, id1");
+let newDiv1 = createNode("div", "id1");
 let table1 = createNode("table", "id2");
 
 let link = createNode("a", "mainLink");
 link.textContent = "Texto del Enlace";//Le insertamos texto 
 link.setAttribute("href", "https://google.com")//Le ponemos un href a Google.com
-grandParent.appendChild(link);//Damos un espacio a link dentro del dom
+// grandParent.appendChild(link);//Damos un espacio a link dentro del dom
+
+//--------------------Eventos / Events------------------
+
+const colorButton = document.getElementsByTagName("button")[0];//Al poner [0], ya me devuelve un elemento y puedo realizarle cosas, si no lo pongo, me devuelve un HTMLCollection, que es como un array
+console.log(colorButton);
+colorButton.addEventListener("click", function (event) { //.addEventListener espera entre parenteris, 1º el nombre del evento, y 2º una función que realice cosas
+    console.log(event);
+    console.log(event.target);
+    // document.body.style.backgroundColor = "green"; //Decimos una vez hecho click el body del documento pase a una bgc green
+    // document.body.classList.toggle("bg-red"); //Aqui con toggle, si tiene bg-red lo quita cuando demos al boton y si volvemos a darle y no tiene bg-red lo pone
+    // console.log(event.target.tagName);//Aqui me haría un log con el nombre de la etiqueta, en este caso BUTTON
+    if (event.ctrlKey) {
+        document.body.classList.toggle("bg-red");
+    }
+    console.log(`X: ${event.clientX} | Y: ${event.clientY}`);//Este log nos da las cordenadas del ratón dentro del navegador en el momento exacto que ejecuta el evento
+    console.log(`Alt ${event.altKey}. Shift: ${event.shiftKey}. Ctrl: ${event.ctrlKey}`);
+});
+
+
+const emailInput = document.querySelector("#emailInput");
+emailInput.addEventListener("focus", inputListener);//Cuando pinchamos sobre el input te activa el evento focus
+emailInput.addEventListener("blur", inputListener);//Cuando despinchamos el input se activa el evento blur 
+
+function inputListener (e) {
+    console.log("Tipo de evento: ", e.type);
+    if (e.target.tagName === "DIV") {
+        console.log("Tipo de evento: ", e.type);
+    } else if (e.type === "focus") {
+        e.target.classList.add("bg-red");
+    } else if (e.type === "blur") {
+        e.target.classList.remove("bg-red");
+    }
+}   
+
+const changeTitle = e => {
+    document.querySelectorAll("h1")[2].textContent = emailInput.value; //Le cambiamos el texto al h1[2], con los datos que reciba emailInput
+}
+emailInput.addEventListener("keydown", inputListener);//Con este evento cuando una tecla este pulsada hara la funcion inputListener
+emailInput.addEventListener("keyup", changeTitle);//Cuando la tecla deje de estar pulsada hará la función changeTitle
 
 
 
-
-
-
-
-
-
-
-
+const container = document.getElementById("container");
+container.addEventListener("mouseover", inputListener);
+container.addEventListener("mouseout", inputListener);
+ 
 
 
 
