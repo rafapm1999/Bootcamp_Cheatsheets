@@ -119,13 +119,26 @@ myDiv2.textContent = "Child 5"
 //myDiv.remove(); //Elimina totalmente el elemento
 
 let myDiv3 = myDiv.cloneNode();
-parent2.before(myDiv3); //
+parent2.before(myDiv3); //Te inserta lo que pongamos entre parentesis antes del elemento que digamos al principio, en este caso, myDiv3 va a estar ubicado antes de parent2 
 
+parent2.after(myDiv.cloneNode());//En este caso el cloneNode realizado de myDiv iria ubicado al final de parent2
+//al no tener true la copia que realiza cloneNode es superficial, y solo copia el elemento, pero sin info ni contenido
 
+//Ejercicio: Crea una función que me devuelva un nodo nuevo y que reciba etiqueta ID
 
+function createNode (label, id) {
+    let newNode = document.createElement(label); 
+    label.id = id;
+    return newNode;
+}
 
+let newDiv1 = createNode("div, id1");
+let table1 = createNode("table", "id2");
 
-
+let link = createNode("a", "mainLink");
+link.textContent = "Texto del Enlace";//Le insertamos texto 
+link.setAttribute("href", "https://google.com")//Le ponemos un href a Google.com
+grandParent.appendChild(link);//Damos un espacio a link dentro del dom
 
 
 
