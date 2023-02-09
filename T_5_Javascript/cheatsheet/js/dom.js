@@ -162,6 +162,10 @@ const emailInput = document.querySelector("#emailInput");
 emailInput.addEventListener("focus", inputListener);//Cuando pinchamos sobre el input te activa el evento focus
 emailInput.addEventListener("blur", inputListener);//Cuando despinchamos el input se activa el evento blur 
 
+const container = document.getElementById("container");
+container.addEventListener("mouseover", inputListener); //Aqui raton esta encima del div, activa inputLisener
+container.addEventListener("mouseout", inputListener);//Si es raton deja de estan encima del div activa inputLisener
+ 
 function inputListener (e) {
     console.log("Tipo de evento: ", e.type);
     if (e.target.tagName === "DIV") {
@@ -179,12 +183,11 @@ const changeTitle = e => {
 emailInput.addEventListener("keydown", inputListener);//Con este evento cuando una tecla este pulsada hara la funcion inputListener
 emailInput.addEventListener("keyup", changeTitle);//Cuando la tecla deje de estar pulsada hará la función changeTitle
 
+function coords (e) {
+    document.querySelectorAll("h1")[3].textContent = `X: ${e.clientX} | Y: ${e.clientY}`;
+}
 
-
-const container = document.getElementById("container");
-container.addEventListener("mouseover", inputListener);
-container.addEventListener("mouseout", inputListener);
- 
+document.body.addEventListener("mousemove", coords);
 
 
 
