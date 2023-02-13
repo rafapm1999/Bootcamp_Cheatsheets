@@ -214,9 +214,9 @@ const arrayFiltered = [1, 5, 6, 7, 5];
 filterItem(arrayFiltered, 5);
 console.log(arrayFiltered);
 
-//Solución del vídeo:
+//Solución del vídeo: (vid. 39)
 function filterItem (array, numberToFilter) {
-    for (let i = 0; i < array.length; i++){
+    for (let i = array.length -1; i >= 0; i--){
         if (array[i] === numberToFilter) {
             removeItem(array, i);
             i--;
@@ -224,3 +224,69 @@ function filterItem (array, numberToFilter) {
     }
     return array
 }
+
+//Apartado 25
+function propertyArray ( object ) {
+    return Object.keys(object);
+}
+
+let objectEj25 = {
+    profesor : "Manolo",
+    alumno1 : "Juan",
+    alumno2 : "pepe",
+    alumno3 : "rafa"
+}
+
+console.log(propertyArray(objectEj25));
+
+let valueArray = object => {Object.values(object)};
+
+//Apartado 26
+
+function stringReverse (string) {
+    let reversedString = "";
+    for (let i = string.length - 1; i >= 0; i--) {
+        reversedString += string.charAt(i)
+    }
+    return reversedString;
+}
+console.log(stringReverse("No abusaré del café en las tardes de programación."));
+
+//Otra solución del video:
+ function stringInvertido (texto) {
+    return texto.split('').reverse().join('');
+ }
+ console.log(stringInvertido("No abusaré del café en las tardes de programación."));
+
+ //Otra solucion:
+ const stringReverse2 = string => {
+    let reversed = "";
+    for (let character of string) {
+        reversed = character.concat(reversed);
+    }
+    return reversed;
+ }
+
+ //Apartado 27
+ function compareStrings (a, b) {
+        return a.toLowerCase() === b.toLowerCase()
+    }
+console.log(compareStrings("hola", "HoLa"));
+
+//Apartado 28
+
+//Solucion del video
+function capitalize(string) {
+    let upperCheck = true;
+    let capitalizedString = '';
+    for (const character of string) {
+        if (upperCheck) {
+            capitalizedString = capitalizedString.concat('', character.toUpperCase())
+        } else {
+            capitalizedString = capitalizedString.concat('', character.toLowerCase())
+        };
+        character === ' ' ? upperCheck = true : upperCheck = false;
+    }
+    return capitalizedString;
+}
+console.log(capitalize("hOLA que TAL EsTas?"));
