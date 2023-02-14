@@ -83,6 +83,7 @@ parent1.classList.remove("bg-dark"); //Elimina la clase que pongamos entre paren
 console.log("Classlist: ", parent1.classList);
 parent1.classList.add("bg-red");//Añade una clase (la que digamos entre parentesis) al nodo seleccionado
 console.log("Classlist: ", parent1.classList);
+//parent1.className("bg-red rounded"); //Con este podemos añadirle varias clases a la vez
 // parent1.classList.toggle("bg-red"); //Toggle alterna la clase, si no está, la incluye, si está la elimina
 // parent1.addEventListener("click", (e) => e.target.classList.toggle("bg-red"));
 parent1.id = "parentOne"; //Para añador id desde JS a HTML

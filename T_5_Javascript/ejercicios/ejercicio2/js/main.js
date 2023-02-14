@@ -290,3 +290,24 @@ function capitalize(string) {
     return capitalizedString;
 }
 console.log(capitalize("hOLA que TAL EsTas?"));
+
+//Otras solución
+function capitalize2(sentence) {
+    const words = sentence.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        const letter = words[i];
+        const initialLetter = letter[0];
+        words[i] = initialLetter.toUpperCase() + letter.substring(1);
+    }
+    return words.join(" ");
+}
+console.log(capitalize2("hOLA que TAL EsTas?"));
+
+// Apartado 29 
+
+const opositeBoolean = bool => {return (Boolean(bool)) ? "False" : "True";}
+console.log(opositeBoolean(false));
+
+//Solucion del video
+const opositeBoolean2 = bool => !bool;
+console.log(opositeBoolean2(false));
