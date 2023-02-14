@@ -84,4 +84,37 @@ textArea.addEventListener("input", e => {e.target.style.color = e.target.value.l
 //Apartado 6
 
 const ap6Input = document.getElementById("evenNumberInput");
-ap6Input.addEventListener("input", e => {e.target.style.borderColor = (e.target.value % 2 = 0) ?})
+ap6Input.nextElementSibling.addEventListener("click", () => {
+    if (ap6Input.value % 2 === 0){
+        ap6Input.style.border = "revert";
+    } else {
+        ap6Input.style.border = "2px solid red";
+    }
+});
+
+//Apartado 7
+
+const ulToList = document.querySelector(".ap7Ul");
+    for (let i = 1; i <= 10; i++) {
+        const newLi = document.createElement("li");
+        newLi.textContent = `Element ${i}`;
+        ulToList.appendChild(newLi);
+    };
+
+//Apartado 8
+
+const newTabButton = document.querySelector("#newTab");
+const aInNewTab = document.querySelector("a");
+newTabButton.addEventListener("click", () => {
+    aInNewTab.target = "_blank";
+    window.open(aInNewTab.href, "Google")
+});
+
+//Apartado 9 
+
+const colorsParagraph = document.querySelector("#colorParagraph");
+const selectColors  = document.querySelector("select");
+selectColors.addEventListener("change", e => {
+    colorsParagraph.style.color = e.target.value;
+});
+
