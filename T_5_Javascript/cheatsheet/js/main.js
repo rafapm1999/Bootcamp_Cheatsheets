@@ -301,6 +301,27 @@ person2.talk();
 
 console.log(this);
 
+//Object Constructor using functions ---------------
+
+function Car(brand, color, weight, topSpeed) { //Al poner el nombre con la primera letra en mayusculas JS reconoce que es un constructor
+    //Ponemos los elementos que necesitemos usar en nuestro constructor, el orden que tenga será el que tengamos que respetar a la hora de rellenar el constructor 
+    this.brand = brand; //Al usar this dentro de la funcion Car pasa a ser oficialmente un constructor
+    this.color = color;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.getDescription = function () {
+        return `This ${this.color} ${this.brand} weights ${this.weight}` +
+        ` kilos and can reach up to ${this.topSpeed} km/h`
+    }
+} //Forma de hacerlo antes de ES5 (antes de 2015)
+
+const car1 = new Car("Mercedes", "red", 2000, 200); //Al poner new delante del constructor estamos diciendole que debe crear un nuevo objeto con las caracteristicas introducidas entre parentesis
+console.log(car1);
+console.log(car1.getDescription());
+
+console.log(car1 instanceof Car); //Aqui comprobamos si car1 es isntancia de Car, si car1 proviene del "molde" Car (true es que si, false es que no)
+
+
 
 
 /* --------------------Arrays------------------------------- */

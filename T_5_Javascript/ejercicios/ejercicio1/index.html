@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio-JS-1</title>
+
+    <style>
+        .btn {
+            background-color: brown;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -65,12 +71,32 @@
         <option value="pink">pink</option>
     </select>
 
+    <!-- ------------------------------------------ -->
     
+    <p>Aleatorio: <span id="currentRandom"></span></p>
+    <p>Numeros aleatorios: <span id="totalNumbers"></span></p>
+    <p>Impares: <span id="oddNumbers"></span></p>
+    <p>Pares: <span id="evenNumbers"></span></p>
+    <button id="randomButton">Generate Random Number</button>
 
+    <!-- ----------------------------------------- -->
 
+    <ul id="ulAp11"></ul>
+    <input type="text" id="inputAp11" placeholder="Introduce un numero">
+    <button id="buttonAp11">Añadir a la lista</button>
+    <br>
+   <!-- ----------------------------------------- -->
 
+    <button id="buttonAp12">Dale un fondo marrón</button>
+    <button id="buttonAp13">Dale un fondo marrón</button>
 
+    <!-- ------------------------------------------ -->
 
+    <div class="btnRed">
+        <button class="btn-red">Boton 1</button>
+        <button class="btn-red">Boton 2</button>
+        <button class="btn-red">Boton 3</button>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

@@ -118,3 +118,85 @@ selectColors.addEventListener("change", e => {
     colorsParagraph.style.color = e.target.value;
 });
 
+//Apartado 10
+
+const numberRandom =  document.getElementById("currentRandom");
+const totalNumbers = document.getElementById("totalNumbers");
+const oddNumbers = document.getElementById("oddNumbers");
+const evenNumbers = document.getElementById("evenNumbers");
+
+/* document.getElementById("randomButton").addEventListener("click", () => {
+    const randomNumber = Math.floor(Math.random() * 100);
+}) */
+
+
+document.getElementById("randomButton").onclick = () => {
+    const randomNumber = parseInt(Math.random() * 100);
+    console.log(randomNumber);
+    numberRandom.textContent = randomNumber;
+    totalNumbers.textContent += ` ${randomNumber},`;
+    randomNumber % 2 === 0 ? evenNumbers.textContent += ` ${randomNumber}` : oddNumbers.textContent += ` ${randomNumber}`;
+};
+ 
+//Apartado 11
+
+const ulAp11 = document.querySelector("#ulAp11");
+const inputAp11 = document.querySelector("#inputAp11");
+const buttonAp11 = document.querySelector("#buttonAp11");
+let numberList = [];
+
+//Vacía la lista y la rellena de nuevo elemento a elemento 
+function fillList () {
+    ulAp11.innerHTML = "";
+    for (let number of numberList) {
+        newLi = document.createElement("li");
+        newLi.textContent = number;
+        ulAp11.appendChild(newLi);
+    }
+};
+
+//Parsea el input, convirtiendolo a Number, comprueba si existe y lo añade o tira alert
+function addToList () {
+    let inputValue = Number(inputAp11.value);
+    if (numberList.indexOf(inputValue) === -1) {
+        numberList.push(inputValue);
+        fillList();
+    } else {
+        window.alert("Vaya... el número ya está introducido.")
+    }
+}
+
+buttonAp11.addEventListener("click", addToList);
+
+//Apartado 12
+
+const buttonAp12 = document.querySelector("#buttonAp12");
+
+function bgBrown (e) {
+    e.target.classList.toggle("btn");
+}
+buttonAp12.addEventListener("click", bgBrown);
+
+//Otra Opcion:
+document.querySelector("#buttonAp13").onclick = (e) =>  e.target.classList.toggle("btn");
+
+//Ejercicio extra, refactorizar
+
+const buttons = document.getElementsByClassName("btn-red");
+
+buttons[0].addEventListener("click", () => {
+    buttons[0].style.backgroundColor = "red";
+});
+buttons[1].addEventListener("click", () => {
+    buttons[1].style.backgroundColor = "red";
+});
+buttons[2].addEventListener("click", () => {
+    buttons[2].style.backgroundColor = "red";
+});
+
+//Solucion 1
+
+Array.from(buttons).forEach(button => button.onclick = (e) => e.target.style.backgroundColor = "red" );
+
+//Solucion 2
+
