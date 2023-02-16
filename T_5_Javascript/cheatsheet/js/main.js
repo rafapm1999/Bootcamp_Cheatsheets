@@ -489,7 +489,7 @@ numbersArray.sort(); // Este sort sin más especificación entre parentesis no s
 console.log(numbersArray);
 
 
-//----------------
+//Ejemplo----------------
 
 function orderNumbers (a, b) { /* Función con los datos especificados con if - else que necesita sort para ordenar numeros */
     if (a<b) {
@@ -514,6 +514,10 @@ console.log(typeof orderNumbers, typeof function (a, b) {return a - b});
 // Ambos son funciones una (orderNumbers) vamos a poder reutilizarla en muchos sort
 //Pero la segunda es una  función anonima la cual aparece y muere en ese sort completo con la función especificada entre parentesis
 //SI se necesita reutilizar la función es mejor guardarla en una variable, si no va a usarse mas lo mejor es usar una función anónima
+
+
+
+
 
 //Funciones de flecha / Arrow Functions (tambien considerada anonima)---------------
 
@@ -556,6 +560,76 @@ console.log(perimeterOfSquare(5));
 
 console.log(typeof function () {}, typeof (() => {}));
 //                      function            function
+
+
+//Funciones de alto nivel-------------------------------
+
+//.map
+
+/* Funcion sin usar map */
+
+/* let arr1 = [1, 2, 3]; //Creamos el array 1
+let arr2 = []; //Creamos otro array pero sin valor
+
+for (let num of arr1) { //Para cada num(valor) del arr1
+    arr2.push(num *2); //Guardamos en arr2 el valor * 2
+}
+ console.log(arr1, arr2); */
+
+ /* Funcion usando .map */
+
+let arr1 = [1, 2, 3];
+let arr2 = arr1.map(item => item * 2);
+
+ console.log(arr1, arr2);
+
+//Ejemplo: A partir de array de años de nacimiento, calcular edades
+
+const birthYears = [1990, 1999, 2000, 1965];
+let years = birthYears.map( item => 2023 - item)
+console.log(years);
+
+//.filter
+
+const prices = [50, 150, 49, 65, 15, 250];
+const expensivePrices = prices.filter( price => price >= 50); // Esta funcion debe devolver true o false, sino .filter no funciona
+console.log(expensivePrices);
+
+const cars = [
+    {
+        brand: "Mercedes",
+        plateNumber: "ASD1234",
+        year: 2008
+
+    },
+    {
+        brand: "Audi",
+        plateNumber: "ASV9234",
+        year: 2020
+
+    },
+    {
+        brand: "SEAT",
+        plateNumber: "NMD1764",
+        year: 2018
+
+    }
+];
+
+console.log(cars.filter(car => car.plateNumber.includes("A")));//Me filtra dentro de car, el valor  plateNumber, que incluya una L
+console.log(cars.filter(car => car.year >= 2010 && car.plateNumber.includes("M")));
+console.log(cars.map( car => car.brand));
+
+//.sort-------------
+
+console.log(cars);
+cars.sort((car1, car2) => car1.year -car2.year);//Ordenamos el array con sort 
+console.log(cars);
+
+//.reduce --------------
+
+const arr = [10, 7, 8, 90];
+console.log(arr.reduce((sum, currentNumber) => sum + currentNumber, 0)); //.reduce funciona como una suma acumulada de lo que le indiquemos, primero necesita recibir una función, y el segundo parámetro es el valor de suma, por defecto si no ponemos nada se inicializa con valor 0
 
 
 //-------------------------------------- Bucles / Loops --------------------
