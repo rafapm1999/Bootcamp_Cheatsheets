@@ -301,6 +301,14 @@ person2.talk();
 
 console.log(this);
 
+//Como copiar un objeto
+
+let obj1 = { property : 5 };
+
+let obj2 = {...obj1} //Copia superficial que usaremos practicamente siempre
+obj2 = JSON.parse(JSON.stringify(obj1)); //Copia profunda y total
+
+obj2 = obj1; //Esto no es una copia. Es el mismo objeto con dos nombres. ¡Nunca usar esta forma!
 //Object Constructor using functions ---------------
 
 function Car(brand, color, weight, topSpeed) { //Al poner el nombre con la primera letra en mayusculas JS reconoce que es un constructor
