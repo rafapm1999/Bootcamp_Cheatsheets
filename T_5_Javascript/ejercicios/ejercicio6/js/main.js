@@ -36,7 +36,7 @@ function updateTable() {
     booksTbody.innerHTML = ""; //Vaciamos el tbody al completo
     
     
-    books.forEach(book => { //Generamos cada fila una a una, de la forma más sencilla
+    displayBooks.forEach(book => { //Generamos cada fila una a una, de la forma más sencilla
         booksTbody.innerHTML += `
         <tr>
             <td>${book.id}</td>
