@@ -86,32 +86,33 @@ priceInput.value = "";
 addBookButton.parentNode.reset();
  }); 
 
-//
+// Inicializamos y seleccionamos el input para filtrar
+
 let filterInput = document.querySelector("#filterInput");
 const priceHeader = document.querySelector("#priceHeader")
 
+//Creamos una variable co valor true por defecto
 let ascendingOrder = true;
 
-
+//Hacemos que el input tenga un listener de tipo "input"
 filterInput.addEventListener("input", e => {
     displayBooks = books.filter(book => book.title.toUpperCase().includes(e.target.value.toUpperCase()) || book.author.toUpperCase().includes(e.target.value.toUpperCase())); //|| book.author.toUpperCase.includes(e.target.value.toUpperCase));
         updateTable();
 });
 
-//Apartado 2
+//Hacemos que el theader price tenga funcionalidad
 
-priceHeader.style.cursor = "pointer";
+priceHeader.style.cursor = "pointer"; //Cambiamos el cursor a pointer
+//Le añadimos un listener al price de tipo click
 priceHeader.addEventListener("click", () => {
+    //Cambiamos el valor de ascendingOrder a su contrario
     ascendingOrder = !ascendingOrder;
+    //seleccionamos el span del html
     document.querySelector("span").innerHTML = ascendingOrder ? "&uarr;" : "&darr;";
+    //hacemos un sort de displayBooks para que nos ordene el array
     displayBooks.sort((book1, book2) => {
-        return ascendingOrder ? book1.price - book2.price : book2.price - book1.price;
+        return ascendingOrder ? book1.price - book2.price : book2.price - book1.price; //Si ascendingOrder es true nos ordena de forma ascendente, sino, descendente
     });
     updateTable();
 });
 
-//Apartado 3
-
-/* const tfoot = document.querySelector("tfoot");
-const totalPrice = displayBooks.reduce((priceSum, book) => priceSum + book.price, 0);
-tfoot.textContent = `Precio total ${totalPrice}`; */
