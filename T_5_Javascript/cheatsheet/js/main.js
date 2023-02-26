@@ -305,7 +305,7 @@ console.log(this);
 
 let obj1 = { property : 5 };
 
-let obj2 = {...obj1} //Copia superficial que usaremos practicamente siempre
+let obj2 = {...obj1} //Copia superficial que usaremos practicamente siempre, al poner {} la copia será un objeto, si pusiesemos [] la copia seria un array
 obj2 = JSON.parse(JSON.stringify(obj1)); //Copia profunda y total
 
 obj2 = obj1; //Esto no es una copia. Es el mismo objeto con dos nombres. ¡Nunca usar esta forma!
