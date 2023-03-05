@@ -2,4 +2,15 @@ function sayHello(){
     return "Hello World!!!";
 }
 
-module.exports=sayHello;
+const generateRandInt = (max, min) => 
+    Math.floor(Math.random() * (max - min +1)) + min;
+
+const mockData = (bottomLimit, min, max, topLimit, iterations) => {
+
+}
+
+
+
+
+module.exports = {sayHello, generateRandInt};
+
