@@ -1,0 +1,3 @@
+node_modules/
+# *.txt El asteristo sire para ignorar todos los archivos txt
+*.txt
