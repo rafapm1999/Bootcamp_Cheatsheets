@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="title"></div>
+    <div id="subtitle"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<!-- Forma de hacerlo en React 17 -->
+<!-- <script type="text/javascript">
+    let h1 = React.createElement("h1", null, "HelloWorld");
+    ReactDom.render(h1, document.querySelector("#root"))
+</script> -->
+
+<!-- Forma de hacerlo en React 18 -->
+<script type="text/javascript">
+    //Con createElement podemos crear elementos mas complejos dentro del proyecto
+    let h1 = React.createElement("h1", {
+        className: "title",
+    }, "HelloWorld");
+    //Con createRoot podemos crear el elementos raiz del renderizado
+    let root = ReactDOM.createRoot(document.querySelector("#title"))
+    root.render(h1) //Esta funcion render sirve para renderizar en el DOM
+    let root2 = ReactDOM.createRoot(document.querySelector("#subtitle"))
+    root2.render(
+        React.createElement("h2", {
+            className: "subtitle",
+        }, "React In Action")
+    )
+</script>
+</body>
+</html>
